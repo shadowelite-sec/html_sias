@@ -1,0 +1,120 @@
+<!-- 13) Design web pages to accept the student information. Student should enter the details like first
+name, last name, middle name, city up to 25 characters, and address up to 50 characters. Show the
+combo box to select the qualification, option button for gender selection. Display the information
+accepted in a formatted form. -->
+<html>
+
+<head>
+  <title>Student Registration Form</title>
+</head>
+
+<body>
+  <form>
+    <h3 align="center">STUDENT REGISTRATION FORM </h3>
+    <table cellpadding="4" width="30%" bgcolor="eeee00" align="center" cellspacing="2">
+      <tr>
+        <td colspan=2>
+          <center>
+            <font size=4><b></b></font>
+          </center>
+        </td>
+      </tr>
+      <tr>
+        <td>First Name</td>
+        <td><input type="text" name="fnames" id="fname" size="30"></td>
+      </tr>
+      <tr>
+        <td>Middle Name</td>
+        <td><input type="text" name="mname" id="mname" size="30"></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><input type="text" name="lname" id="lname" size="30"></td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td>
+          <textarea id="address" rows="2" cols="25"> </textarea>
+      </tr>
+      <tr>
+        <td>PinCode</td>
+        <td><input type="number" name="pincode" id="pincode" size="7"></td>
+      </tr>
+      <tr>
+        <td>Email Id</td>
+        <td><input type="email" name="emailid" id="emailid" size="30"></td>
+      </tr>
+      <tr>
+        <td>Mobile No</td>
+        <td><input type="number" name="mobileno" id="mobileno" size="12"></td>
+      </tr>
+      <tr>
+        <td>Sex</td>
+        <td><input type="radio" name="sex" value="male" size="10" id="gen">Male
+          <input type="radio" name="sex" value="Female" size="10" id="gen">Female</td>
+      </tr>
+      <tr>
+        <td>Course</td>
+        <td><select name="Course" id="course">
+            <option value="-1" selected>select..</option>
+            <option value="BCA">BCA</option>
+            <option value="B.Tech">B.TECH</option>
+            <option value="B.Sc">BSc.CS</option>
+            <option value="MBA">MBA</option>
+            <option value="MCA">MCA</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td><input type="reset"></td>
+        <td colspan="2">
+          <input type="button" onclick="showInput();" value="Submit" /></td>
+      </tr>
+    </table>
+  </form>
+  <h3 align="center">DISPLAY DATA </h3>
+  <table cellpadding="0" width="50%" bgcolor="FFDDDD" align="center" cellspacing="0" bord er="1">
+    <tr>
+      <td width="30%"> Name of the Student:</td>
+      <td width="70%" id='studname'> </td>
+    </tr>
+    <tr>
+      <td width="30%"> Address:</td>
+      <td width="70%"> <span id='addr'></span></td>
+    </tr>
+    <tr>
+      <td width="30%">Email Id:</td>
+      <td width="70%" id='email'> </td>
+    </tr>
+    <tr>
+      <td width="30%">Mobile No:</td>
+      <td width="70%" id='mobile'> </td>
+    </tr>
+    <tr>
+      <td width="30%">Sex:</td>
+      <td width="70%" id='sex'> </td>
+    </tr>
+    <tr>
+      <td width="30%">Course:</td>
+      <td width="70%" id='quali'> </td>
+    </tr>
+  </table>
+  <script language="JavaScript">
+    function showInput() {
+      document.getElementById('studname').innerHTML = document.getElementById("fname").va
+      lue + " " + document
+        .getElementById("mname").value + " " + document.getElementById("lname").value;
+      document.getElementById('addr').innerHTML = document.getElementById("address").valu
+      e + "," + document
+        .getElementById("pincode").value;
+      document.getElementById('email').innerHTML = document.getElementById("emailid").val
+      ue;
+      document.getElementById('mobile').innerHTML = document.getElementById("mobileno").v
+      alue;
+      document.getElementById('sex').innerHTML = document.getElementById("gen").value;
+      document.getElementById('quali').innerHTML = document.getElementById("course").valu
+      e;
+    }
+  </script>
+</body>
+
+</html>
